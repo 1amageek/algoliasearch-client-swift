@@ -42,6 +42,7 @@ let package = Package(
         .library(name: "PersonalizationClient", targets: ["PersonalizationClient"]),
         .library(name: "PlacesClient", targets: ["PlacesClient"]),
         .library(name: "AlgoliaSearchClient", targets: ["AlgoliaSearchClient"]),
+        .library(name: "SearchClient", targets: ["SearchClient"]),
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-log.git", from: "1.4.0")
@@ -52,6 +53,10 @@ let package = Package(
             dependencies: [
                 .product(name: "Logging", package: "swift-log")
             ] + extraTargetDependencies),
+        .target(
+            name: "SearchClient",
+            dependencies: ["Core"]
+        ),
         .target(
             name: "AccountClient",
             dependencies: ["Core"]
@@ -84,8 +89,7 @@ let package = Package(
                 "InsightsClient",
                 "RecommendClient",
                 "PersonalizationClient",
-                "PlacesClient",
-                //                "Core"
+                "PlacesClient"
             ]
         ),
         .testTarget(
