@@ -6,3 +6,5 @@
 //
 
 @_exported import Core
+
+public typealias Client = SearchClient
