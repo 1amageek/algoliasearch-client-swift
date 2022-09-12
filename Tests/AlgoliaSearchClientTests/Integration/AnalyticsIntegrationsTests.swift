@@ -7,7 +7,8 @@
 
 import Foundation
 import XCTest
-@testable import AlgoliaSearchClient
+@testable import Core
+@testable import AnalyticsClient
 
 class AnalyticsIntegrationTests: IntegrationTestCase {
   

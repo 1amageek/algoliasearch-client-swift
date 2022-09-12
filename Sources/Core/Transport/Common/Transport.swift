@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Transport: Credentials {
+public protocol Transport: Credentials {
 
   func execute<Command: AlgoliaCommand, Response: Decodable, Output>(_ command: Command, transform: @escaping (Response) -> Output, completion: @escaping (Result<Output, Error>) -> Void) -> Operation & TransportTask
   func execute<Command: AlgoliaCommand, Response: Decodable, Output>(_ command: Command, transform: @escaping (Response) -> Output) throws -> Output
@@ -16,11 +16,11 @@ protocol Transport: Credentials {
 
 extension Transport {
 
-  func execute<Command: AlgoliaCommand, Output: Decodable>(_ command: Command, completion: @escaping ResultCallback<Output>) -> Operation & TransportTask {
+  public func execute<Command: AlgoliaCommand, Output: Decodable>(_ command: Command, completion: @escaping ResultCallback<Output>) -> Operation & TransportTask {
     execute(command, transform: { $0 }, completion: completion)
   }
 
-  func execute<Command: AlgoliaCommand, Output: Decodable>(_ command: Command) throws -> Output {
+  public func execute<Command: AlgoliaCommand, Output: Decodable>(_ command: Command) throws -> Output {
     try execute(command, transform: { $0 })
   }
 

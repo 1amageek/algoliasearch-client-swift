@@ -8,6 +8,7 @@
 import Foundation
 import XCTest
 @testable import AlgoliaSearchClient
+@testable import PersonalizationClient
 
 class PersonalizationCommandTests: XCTestCase, AlgoliaCommandTest {
   

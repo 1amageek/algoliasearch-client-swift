@@ -7,15 +7,14 @@
 
 import Foundation
 
-enum Command {
-}
+public enum Command { }
 
 extension Command {
-  struct Template: AlgoliaCommand {
-    var method: HTTPMethod = .get
-    let callType: CallType = .read
-    let path = URL.indexesV1
-    let body: Data?
-    let requestOptions: RequestOptions? = nil
-  }
+    public struct Template: AlgoliaCommand {
+        public var method: HTTPMethod = .get
+        public let callType: CallType = .read
+        public let path = URL.indexesV1
+        public let body: Data?
+        public let requestOptions: RequestOptions? = nil
+    }
 }

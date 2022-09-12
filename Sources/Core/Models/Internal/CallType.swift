@@ -16,12 +16,12 @@ public enum CallType {
 }
 
 extension CallType: CustomStringConvertible {
-  public var description: String {
-    switch self {
-    case .read:
-      return "read"
-    case .write:
-      return "write"
+    public var description: String {
+        switch self {
+            case .read:
+                return "read"
+            case .write:
+                return "write"
+        }
     }
-  }
 }

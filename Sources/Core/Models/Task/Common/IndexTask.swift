@@ -8,7 +8,5 @@
 import Foundation
 
 public protocol IndexTask {
-
-  var taskID: TaskID { get }
-
+    var taskID: TaskID { get }
 }

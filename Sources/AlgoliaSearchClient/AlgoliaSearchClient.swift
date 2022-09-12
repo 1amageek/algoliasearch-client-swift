@@ -12,4 +12,4 @@ import Foundation
 @_exported import PersonalizationClient
 @_exported import PlacesClient
 @_exported import RecommendClient
-@_exported import SearchClient
+//@_exported import Core

@@ -34,7 +34,7 @@ extension Command {
       let body: Data?
       let requestOptions: RequestOptions?
 
-      init(apiKey: AlgoliaSearchClient.APIKey, parameters: APIKeyParameters, requestOptions: RequestOptions?) {
+      init(apiKey: Core.APIKey, parameters: APIKeyParameters, requestOptions: RequestOptions?) {
         self.path = URL
           .keysV1
           .appending(apiKey)
@@ -51,7 +51,7 @@ extension Command {
       let path: URL
       let requestOptions: RequestOptions?
 
-      init(apiKey: AlgoliaSearchClient.APIKey, requestOptions: RequestOptions?) {
+      init(apiKey: Core.APIKey, requestOptions: RequestOptions?) {
         self.path = URL
           .keysV1
           .appending(apiKey)
@@ -67,7 +67,7 @@ extension Command {
       let path: URL
       let requestOptions: RequestOptions?
 
-      init(apiKey: AlgoliaSearchClient.APIKey, requestOptions: RequestOptions?) {
+      init(apiKey: Core.APIKey, requestOptions: RequestOptions?) {
         self.path = URL
           .keysV1
           .appending(apiKey)
@@ -84,7 +84,7 @@ extension Command {
       let path: URL
       let requestOptions: RequestOptions?
 
-      init(apiKey: AlgoliaSearchClient.APIKey, requestOptions: RequestOptions?) {
+      init(apiKey: Core.APIKey, requestOptions: RequestOptions?) {
         self.path = URL
           .keysV1
           .appending(apiKey)

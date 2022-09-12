@@ -7,16 +7,15 @@
 
 import Foundation
 
-class HostIterator: IteratorProtocol {
-
-  var getHost: () -> RetryableHost?
-
-  init(getHost: @escaping () -> RetryableHost?) {
-    self.getHost = getHost
-  }
-
-  func next() -> RetryableHost? {
-    return getHost()
-  }
-
+public class HostIterator: IteratorProtocol {
+    
+    var getHost: () -> RetryableHost?
+    
+    init(getHost: @escaping () -> RetryableHost?) {
+        self.getHost = getHost
+    }
+    
+    public func next() -> RetryableHost? {
+        return getHost()
+    }    
 }

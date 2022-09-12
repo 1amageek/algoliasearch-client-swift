@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@testable import AlgoliaSearchClient
+@testable import Core
 
 struct TestCredentials: Credentials {
 

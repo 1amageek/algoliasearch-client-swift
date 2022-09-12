@@ -7,7 +7,7 @@
 
 import Foundation
 import XCTest
-@testable import AlgoliaSearchClient
+@testable import Core
 
 func AssertEncodeDecode<T: Codable>(_ value: T, _ rawValue: JSON, file: StaticString = #file, line: UInt = #line) throws {
   try AssertEncode(value, expected: rawValue, file: file, line: line)

@@ -8,14 +8,19 @@
 import Foundation
 
 public struct ObjectCreation: IndexTask, Codable {
-
-  /// The date at which the record has been created.
-  public let createdAt: Date
-
-  /// The TaskID which can be used with the [EndpointAdvanced.waitTask] method.
-  public let taskID: TaskID
-
-  /// The inserted record ObjectID
-  public let objectID: ObjectID
-
+    
+    /// The date at which the record has been created.
+    public let createdAt: Date
+    
+    /// The TaskID which can be used with the [EndpointAdvanced.waitTask] method.
+    public let taskID: TaskID
+    
+    /// The inserted record ObjectID
+    public let objectID: ObjectID
+    
+    public init(createdAt: Date, taskID: TaskID, objectID: ObjectID) {
+        self.createdAt = createdAt
+        self.taskID = taskID
+        self.objectID = objectID
+    }
 }

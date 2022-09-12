@@ -7,7 +7,7 @@
 
 import Foundation
 import XCTest
-@testable import AlgoliaSearchClient
+@testable import Core
 
 let defaultWaitTimeInterval: TimeInterval = 20
 

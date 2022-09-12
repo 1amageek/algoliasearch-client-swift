@@ -8,6 +8,7 @@
 import Foundation
 import XCTest
 @testable import AlgoliaSearchClient
+@testable import Core
 #if canImport(FoundationNetworking)
 import FoundationNetworking
 #endif
@@ -41,7 +42,15 @@ extension AlgoliaCommandTest {
       XCTAssertTrue(queryItems.contains(where: { $0.name == item.name && $0.value == item.value }) , file: file, line: line)
     }
 
-    let jsonDecoder = JSONDecoder()
+      let dateFormatter = DateFormatter()
+      dateFormatter.calendar = Calendar(identifier: .gregorian)
+      dateFormatter.timeZone = TimeZone.current
+      dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+      dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+
+      let jsonDecoder = JSONDecoder()
+      decoder.dateDecodingStrategy = .formatted(dateFormatter)
+
     func dataToJSON(_ data: Data) throws -> JSON { try jsonDecoder.decode(JSON.self, from: data) }
     try XCTAssertEqual(request.httpBody.flatMap(dataToJSON), body.flatMap(dataToJSON), file: file, line: line)
     #else

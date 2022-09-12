@@ -41,7 +41,6 @@ let package = Package(
         .library(name: "RecommendClient", targets: ["RecommendClient"]),
         .library(name: "PersonalizationClient", targets: ["PersonalizationClient"]),
         .library(name: "PlacesClient", targets: ["PlacesClient"]),
-        .library(name: "SearchClient", targets: ["SearchClient"]),
         .library(name: "AlgoliaSearchClient", targets: ["AlgoliaSearchClient"]),
     ],
     dependencies: [
@@ -71,14 +70,10 @@ let package = Package(
         ),
         .target(
             name: "PersonalizationClient",
-            dependencies: ["Core"]
+            dependencies: ["InsightsClient"]
         ),
         .target(
             name: "PlacesClient",
-            dependencies: ["Core"]
-        ),
-        .target(
-            name: "SearchClient",
             dependencies: ["Core"]
         ),
         .target(
@@ -90,15 +85,14 @@ let package = Package(
                 "RecommendClient",
                 "PersonalizationClient",
                 "PlacesClient",
-                "SearchClient"
+                //                "Core"
             ]
         ),
-        
-        //        .testTarget(
-        //            name: "AlgoliaSearchClientTests",
-        //            dependencies: [
-        //                .target(name: "AlgoliaSearchClient"),
-        //                .product(name: "Logging", package: "swift-log")
-        //            ] + extraTargetDependencies)
+        .testTarget(
+                name: "AlgoliaSearchClientTests",
+                dependencies: [
+                    .target(name: "AlgoliaSearchClient"),
+                    .product(name: "Logging", package: "swift-log")
+                ] + extraTargetDependencies)
     ]
 )
